@@ -13,10 +13,12 @@ async function connect() {
   try {
     let lndHost = process.env.LND_HOST;
     let lndPort = process.env.LND_PORT;
-    let certPath = process.env.LND_CERT_PATH;
-    let macaroonPath = process.env.LND_MACAROON_PATH;
+    // let certPath = process.env.LND_CERT_PATH;
+    // let macaroonPath = process.env.LND_MACAROON_PATH;
+    let certPath = process.env.HOME + '/.dcrlnd/tls.cert';
+    let macaroonPath = process.env.HOME + '/.dcrlnd/data/chain/decred/testnet/admin.macaroon';
     let noMacaroons = process.env.LND_NO_MACAROONS;
-
+    
     lndPort = parseInt(lndPort) || undefined; // integer or undefined
     noMacaroons = noMacaroons === 'true' || undefined; // true or undefined
 
